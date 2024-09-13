@@ -1,0 +1,55 @@
+/*You are given a string s. You need to reverse the string.
+
+Example 1:
+
+Input:
+s = Geeks
+Output: skeeG
+Example 2:
+
+Input:
+s = for
+Output: rof
+Your Task:
+
+You only need to complete the function reverseWord() that takes s as parameter and returns the reversed string.
+
+Expected Time Complexity: O(|S|).
+Expected Auxiliary Space: O(1).
+
+Constraints:
+1 <= |s| <= 10000
+
+*/
+
+
+
+class Reverse
+{
+    // Complete the function
+    // str: input string
+    public static String reverseWord(String str)
+    {
+        // Reverse the string str
+      char[] charArray = str.toCharArray();
+        int n = charArray.length;
+
+        // Perform swapping to reverse the array
+        for (int i = 0; i < n / 2; i++) {
+            char temp = charArray[i];
+            charArray[i] = charArray[n - i - 1];
+            charArray[n - i - 1] = temp;
+        }
+
+        // Convert the character array back to a string
+        return new String(charArray);
+        
+        
+        
+        //  String result = "";
+        // for(int i=str.length()-1; i>=0; i--){
+        //     result += str.charAt(i);
+        // }
+        // return result;
+    }
+}
